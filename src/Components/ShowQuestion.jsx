@@ -2,8 +2,16 @@ import Accordion from 'react-bootstrap/Accordion';
 import Button   from 'react-bootstrap/Button';
 
 
-const ShowQuestion=({Data})=>{
+const ShowQuestion=({Data,OnDeleteSelected})=>{
 
+  const DeleteSelected=(e)=>{
+
+    const GetID=Data.findIndex( (i)=>i.id===e );
+    Data.splice(GetID,1);
+ 
+    OnDeleteSelected(Data);
+ 
+  }
     return(
         <>
         {
@@ -19,7 +27,7 @@ const ShowQuestion=({Data})=>{
                 </Accordion.Header>
               <Accordion.Body className='text-end'>
                <div> {e.Answer}
-              <Button variant="dark" >حذف</Button>
+              <Button onClick={ ()=>DeleteSelected(e.id)} variant="dark" >حذف</Button>
               </div>
               </Accordion.Body>
             </Accordion.Item>

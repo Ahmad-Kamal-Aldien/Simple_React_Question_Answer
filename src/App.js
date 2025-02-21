@@ -14,6 +14,14 @@ function App() {
    const ChangeData=()=>{
     SetData([...Data]);
    }
+   const Delete=()=>{
+    SetData([...Data])
+   }
+   const OnDeleteSelected=(item)=>{
+    SetData([...item])
+   
+   }
+ 
   return (
   <>
   <Container className='mt-5 font'>
@@ -23,7 +31,7 @@ function App() {
         </Row>
         <Row className='font'>
           {
-                Data.length>0?<ShowQuestion  Data={Data}/>:
+                Data.length>0?<ShowQuestion  Data={Data} OnDeleteSelected={OnDeleteSelected}/>:
                 <p className='text-center'>لا يوجد اسئله لعرضها</p>
           }
         
@@ -31,7 +39,8 @@ function App() {
         
       <Row className='mt-3 font'>
         {
-          Data.length>0?<DeleteAllQuestions/>:""
+          Data.length>0?<DeleteAllQuestions 
+         Delete={Delete}    />:""
 
         }
      
@@ -42,3 +51,4 @@ function App() {
 }
 
 export default App;
+
