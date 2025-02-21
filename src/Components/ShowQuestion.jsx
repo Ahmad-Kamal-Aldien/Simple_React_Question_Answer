@@ -18,9 +18,9 @@ const ShowQuestion=({Data})=>{
              
                 </Accordion.Header>
               <Accordion.Body className='text-end'>
-               <div> {e.Answer}</div>
-              <Button variant="dark">حذف</Button>
-      
+               <div> {e.Answer}
+              <Button variant="dark" >حذف</Button>
+              </div>
               </Accordion.Body>
             </Accordion.Item>
       

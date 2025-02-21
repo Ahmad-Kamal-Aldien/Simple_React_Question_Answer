@@ -7,7 +7,7 @@ const AddQuestions=({ChangeData})=>{
     const [Answer,SetAnswer]=useState('')
     const [Question,SetQuestion]=useState('')
     const SaveData=()=>{
-       Data.push( {id:Math.random(),Question:SetQuestion,Answer:SetAnswer} );
+       Data.push( {id:Math.random(),Question:Question,Answer:Answer} );
     
 
         
