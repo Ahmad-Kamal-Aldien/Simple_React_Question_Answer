@@ -4,6 +4,7 @@ import Button   from 'react-bootstrap/Button';
 
 const ShowQuestion=({Data,OnDeleteSelected})=>{
 
+const GetDataFromLoacalStorage=JSON.parse(localStorage.getItem("Items"))
   const DeleteSelected=(e)=>{
 
     const GetID=Data.findIndex( (i)=>i.id===e );
@@ -14,8 +15,12 @@ const ShowQuestion=({Data,OnDeleteSelected})=>{
   }
     return(
         <>
+
+
         {
-          Data.map( (e)=>{
+
+ 
+          GetDataFromLoacalStorage.map( (e)=>{
             return  <Accordion key={e.id}>
             <Accordion.Item eventKey={e.id}>
             

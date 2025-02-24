@@ -8,9 +8,7 @@ const AddQuestions=({ChangeData})=>{
     const [Question,SetQuestion]=useState('')
     const SaveData=()=>{
        Data.push( {id:Math.random(),Question:Question,Answer:Answer} );
-    
 
-        
         ChangeData();
         SetQuestion('')
         SetAnswer('')
@@ -28,7 +26,9 @@ const AddQuestions=({ChangeData})=>{
          onChange={(e)=>SetAnswer(e.target.value)} 
          
           type="text" placeholder="الاجابه" required />
-          <Button onClick={SaveData} variant="primary" className='p-2'>اضافه</Button>
+          <Button onClick={SaveData} variant="primary" className='p-2'
+             
+          >اضافه</Button>
         </div>
         
 
